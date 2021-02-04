@@ -13,16 +13,9 @@
 		<div *ngFor=" let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
 			<div class="id">{{i}}</div>
 			<div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
-			<!-- <button
-      mat-fab
-      color="primary"
-      aria-label="Example icon button with a delete icon"
-    >
-      <mat-icon>delete</mat-icon>
-    </button> -->
-			<!-- <mat-icon class="remove" (click)="deleteTodo(i)">Remove</mat-icon> -->
+		</div>
+		<div class="example-button-container">
 			<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
           <mat-icon>delete</mat-icon>
         </button>
-		</div>
 </div>
