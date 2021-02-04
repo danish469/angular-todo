@@ -7,15 +7,17 @@
       class="todo-input"
       [(ngModel)]="inputTodo"
     />
-		<input type="submit" value="Add to-do" class="todo-submit" />
-  </form>
-		<br />
-		<div *ngFor=" let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
-			<div class="id">{{i}}</div>
-			<div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
+		<!-- <input type="submit" value="Add to-do" /> -->
+		<button type="submit" class="todo-submit"  value="Add to-do" mat-raised-button>Add to-do</button>
+	</form>
+	<br />
+	<div *ngFor=" let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
+		<div class="id">{{i}}</div>
+		<div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
+
+		<div>
+			<button mat-fab color="primary" (click)=deleteTodo(i)>
+        <!-- <mat-icon>delete</mat-icon> -->
+      </button>
 		</div>
-		<div class="example-button-container">
-			<button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-          <!-- <mat-icon>delete</mat-icon> -->
-        </button>
-		</div>
+	</div>
