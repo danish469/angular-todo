@@ -4,10 +4,9 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { TodoComponent } from "./todo/todo.component";
-import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MatButtonModule],
+  imports: [BrowserModule, FormsModule],
   declarations: [AppComponent, HelloComponent, TodoComponent],
   bootstrap: [AppComponent]
 })
