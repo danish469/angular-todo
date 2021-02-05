@@ -1,6 +1,6 @@
 <div class="todos">
-  <form (submit)="addTodo()">
-    <input
+	<form (submit)="addTodo()">
+		<input
       type="text"
       name="inputTodo"
       placeholder="Enter to-do. . ."
@@ -8,22 +8,19 @@
       [(ngModel)]="inputTodo"
     />
 
-    <button mat-raised-button value="Add to-do">
+		<button mat-raised-button >
       Add to-do
     </button>
-  </form>
-  <br />
+	</form>
+	<br />
 
-  <div
-    *ngFor=" let todo of todos; let i = index"
-    class="todo {{(todo.completed ? 'done' : '')}}"
-  >
-    <div class="id">{{i}}</div>
-    <div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
+	<div *ngFor=" let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
+		<div class="id">{{i}}</div>
+		<div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
 
-    <div>
-      <button mat-fab color="primary" (click)="deleteTodo(i)">Delete</button>
-      <!-- Error: mat-icon is not working  -->
-    </div>
-  </div>
+		<div>
+			<button mat-fab color="primary" (click)="deleteTodo(i)">Delete</button>
+			<!-- Error: mat-icon is not working  -->
+		</div>
+	</div>
 </div>
